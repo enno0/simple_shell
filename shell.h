@@ -12,6 +12,7 @@
 #include <fcntl.h>
 #include <errno.h>
 #include <signal.h>
+#include <linux/stat.h>
 
 /* for read/write buffers */
 #define READ_BUF_SIZE 1024
@@ -47,7 +48,7 @@ typedef struct liststrk_m
 {
 	int num;
 	char *str;
-	struct liststr *next;
+	struct liststrk_m *next;
 } list_tk_m;
 
 /**

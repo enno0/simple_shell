@@ -30,7 +30,7 @@ char **strtowk_m(char *str, char *d)
 		while (is_delimk_m(str[i], d))
 			i++;
 		k = 0;
-		while (!is_delim(str[i + k], d) && str[i + k])
+		while (!is_delimk_m(str[i + k], d) && str[i + k])
 			k++;
 		s[j] = malloc((k + 1) * sizeof(char));
 		if (!s[j])
@@ -47,4 +47,3 @@ char **strtowk_m(char *str, char *d)
 	s[j] = NULL;
 	return (s);
 }
-

@@ -1,4 +1,5 @@
 #include "shell.h"
+
 /**
  * is_cmdk_m - determines if a file is an executable command
  * @info: the info struct
@@ -10,13 +11,11 @@ int is_cmdk_m(info_tk_m *info, char *path)
 {
 	struct stat st;
 
-	(void)info;
-	if (!path || stat(path, &st))
-		return (0);
-
-	if (st.st_mode & S_IFREG)
+	if (!path || stat(path, &st) != 0)
 	{
-		return (1);
+		perror("is_cmdk_m"); // Add appropriate error handling
+		return 0;
 	}
-	return (0);
+
+	return S_ISREG(st.st_mode) ? 1 : 0;
 }
