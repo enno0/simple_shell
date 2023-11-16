@@ -1,3 +1,4 @@
+#include "shell.h"
 /**
  * _reallock_m - reallocates a block of memory
  * @ptr: pointer to previous malloc'ated block
@@ -6,6 +7,7 @@
  *
  * Return: pointer to da ol'block nameen.
  */
+
 void *_reallock_m(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char *p;

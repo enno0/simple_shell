@@ -1,4 +1,5 @@
 #include "shell.h"
+
 /**
  * input_bufk_m - buffers chained commands
  * @info: parameter struct
@@ -42,4 +43,3 @@ ssize_t input_bufk_m(info_tk_m *info, char **buf, size_t *len)
 	}
 	return (r);
 }
-
