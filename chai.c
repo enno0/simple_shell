@@ -78,7 +78,7 @@ void check_chaink_m(info_tk_m *info, char *buf, size_t *p, size_t i, size_t len)
 int replace_aliask_m(info_tk_m *info)
 {
 	int i;
-	list_t *node;
+	list_tk_m *node;
 	char *p;
 
 	for (i = 0; i < 10; i++)
@@ -117,24 +117,23 @@ int replace_varsk_m(info_tk_m *info)
 		if (!_strcmpk_m(info->argv[i], "$?"))
 		{
 			replace_stringk_m(&(info->argv[i]),
-				_strdupk_m(convert_numberk_m(info->status, 10, 0)));
+							  _strdupk_m(convert_numberk_m(info->status, 10, 0)));
 			continue;
 		}
 		if (!_strcmpk_m(info->argv[i], "$$"))
 		{
 			replace_stringk_m(&(info->argv[i]),
-				_strdupk_m(convert_numberk_m(getpid(), 10, 0)));
+							  _strdupk_m(convert_numberk_m(getpid(), 10, 0)));
 			continue;
 		}
 		node = node_starts_withk_m(info->env, &info->argv[i][1], '=');
 		if (node)
 		{
 			replace_stringk_m(&(info->argv[i]),
-				_strdupk_m(_strchrk_m(node->str, '=') + 1));
+							  _strdupk_m(_strchrk_m(node->str, '=') + 1));
 			continue;
 		}
 		replace_stringk_m(&info->argv[i], _strdupk_m(""));
-
 	}
 	return (0);
 }

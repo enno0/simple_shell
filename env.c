@@ -41,7 +41,7 @@ char *_getenvk_m(info_tk_m *info, const char *name)
  *        constant function prototype.
  *  Return: Always 0
  */
-int _mysetenvk_m(info_t *info)
+int _mysetenvk_m(info_tk_m *info)
 {
 	if (info->argc != 3)
 	{
