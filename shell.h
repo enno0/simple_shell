@@ -234,4 +234,10 @@ int replace_aliask_m(info_tk_m *);
 int replace_varsk_m(info_tk_m *);
 int replace_stringk_m(char **, char *);
 
+/*lol*/
+ssize_t read_bufk_m(info_tk_m *info, char *buf, size_t *i);
+ssize_t input_bufk_m(info_tk_m *info, char **buf, size_t *len);
+int unset_aliask_m(info_tk_m *info, char *str);
+int set_aliask_m(info_tk_m *info, char *str);
+int print_aliask_m(list_tk_m *node);
 #endif

@@ -2,19 +2,18 @@
 
 /**
  * _strlenk_m - returns the length of a string
- * @s: the string whose length to check
+ * @k: the string whose length to check
  *
  * Return: integer length of string
  */
-int _strlenk_m(char *s)
+int _strlenk_m(char *k)
 {
 	int i = 0;
 
-	if (!s)
+	if (!k)
 		return (0);
 
-	while (*s++)
+	while (*k++)
 		i++;
 	return (i);
 }
-

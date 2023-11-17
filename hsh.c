@@ -6,7 +6,7 @@
  *
  * Return: 0 on success, 1 on error, or error code
  */
-int hsh(info_tk_m *info, char **av)
+int hshk_m(info_tk_m *info, char **av)
 {
 	ssize_t r = 0;
 	int builtin_ret = 0;
@@ -31,7 +31,7 @@ int hsh(info_tk_m *info, char **av)
 	}
 	write_historyk_m(info);
 	free_infok_m(info, 1);
-	if (!interactive(info) && info->status)
+	if (!interactivek_m(info) && info->status)
 		exit(info->status);
 	if (builtin_ret == -2)
 	{
