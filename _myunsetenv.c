@@ -2,8 +2,7 @@
 
 /**
  * _myunsetenvk_m - Remove an environment variable
- * @info: Structure containing potential arguments. Used to maintain
- *        constant function prototype.
+ * @info: Structure containing potential arguments. Used to maintain constant function prototype.
  *  Return: Always 0
  */
 int _myunsetenvk_m(info_tk_m *info)

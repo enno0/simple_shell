@@ -9,7 +9,7 @@
  */
 int _getlinek_m(info_tk_m *info, char **ptr, size_t *length)
 {
-	static char buf[READ_BUF_SIZE];
+	static char buf[READ_BUF_SIZEk_m];
 	static size_t i, len;
 	size_t k;
 	ssize_t r = 0, s = 0;

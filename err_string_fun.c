@@ -29,14 +29,14 @@ void _eputsk_m(char *str)
 int _eputchark_m(char c)
 {
 	static int i;
-	static char buf[WRITE_BUF_SIZE];
+	static char buf[WRITE_BUF_SIZEk_m];
 
-	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
+	if (c == BUF_FLUSHk_m || i >= WRITE_BUF_SIZEk_m)
 	{
 		write(2, buf, i);
 		i = 0;
 	}
-	if (c != BUF_FLUSH)
+	if (c != BUF_FLUSHk_m)
 		buf[i++] = c;
 	return (1);
 }
@@ -52,14 +52,14 @@ int _eputchark_m(char c)
 int _putfdk_m(char c, int fd)
 {
 	static int i;
-	static char buf[WRITE_BUF_SIZE];
+	static char buf[WRITE_BUF_SIZEk_m];
 
-	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
+	if (c == BUF_FLUSHk_m || i >= WRITE_BUF_SIZEk_m)
 	{
 		write(fd, buf, i);
 		i = 0;
 	}
-	if (c != BUF_FLUSH)
+	if (c != BUF_FLUSHk_m)
 		buf[i++] = c;
 	return (1);
 }

@@ -16,18 +16,18 @@ int is_chaink_m(info_tk_m *info, char *buf, size_t *p)
 	{
 		buf[j] = 0;
 		j++;
-		info->cmd_buf_type = CMD_OR;
+		info->cmd_buf_type = CMD_ORk_m;
 	}
 	else if (buf[j] == '&' && buf[j + 1] == '&')
 	{
 		buf[j] = 0;
 		j++;
-		info->cmd_buf_type = CMD_AND;
+		info->cmd_buf_type = CMD_ANDk_m;
 	}
 	else if (buf[j] == ';') /* found end of this command */
 	{
 		buf[j] = 0; /* replace semicolon with null */
-		info->cmd_buf_type = CMD_CHAIN;
+		info->cmd_buf_type = CMD_CHAINk_m;
 	}
 	else
 		return (0);
@@ -49,7 +49,7 @@ void check_chaink_m(info_tk_m *info, char *buf, size_t *p, size_t i, size_t len)
 {
 	size_t j = *p;
 
-	if (info->cmd_buf_type == CMD_AND)
+	if (info->cmd_buf_type == CMD_ANDk_m)
 	{
 		if (info->status)
 		{
@@ -57,7 +57,7 @@ void check_chaink_m(info_tk_m *info, char *buf, size_t *p, size_t i, size_t len)
 			j = len;
 		}
 	}
-	if (info->cmd_buf_type == CMD_OR)
+	if (info->cmd_buf_type == CMD_ORk_m)
 	{
 		if (!info->status)
 		{

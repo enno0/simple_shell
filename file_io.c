@@ -14,13 +14,13 @@ char *get_history_filek_m(info_tk_m *info)
 	dir = _getenvk_m(info, "HOME=");
 	if (!dir)
 		return (NULL);
-	buf = malloc(sizeof(char) * (_strlenk_m(dir) + _strlenk_m(HIST_FILE) + 2));
+	buf = malloc(sizeof(char) * (_strlenk_m(dir) + _strlenk_m(HIST_FILEk_m) + 2));
 	if (!buf)
 		return (NULL);
 	buf[0] = 0;
 	_strcpyk_m(buf, dir);
 	_strcatk_m(buf, "/");
-	_strcatk_m(buf, HIST_FILE);
+	_strcatk_m(buf, HIST_FILEk_m);
 	return (buf);
 }
 
@@ -48,7 +48,7 @@ int write_historyk_m(info_tk_m *info)
 		_putsfdk_m(node->str, fd);
 		_putfdk_m('\n', fd);
 	}
-	_putfdk_m(BUF_FLUSH, fd);
+	_putfdk_m(BUF_FLUSHk_m, fd);
 	close(fd);
 	return (1);
 }
@@ -96,7 +96,7 @@ int read_historyk_m(info_tk_m *info)
 		build_history_listk_m(info, buf + last, linecount++);
 	free(buf);
 	info->histcount = linecount;
-	while (info->histcount-- >= HIST_MAX)
+	while (info->histcount-- >= HIST_MAXk_m)
 		delete_node_at_indexk_m(&(info->history), 0);
 	renumber_historyk_m(info);
 	return (info->histcount);

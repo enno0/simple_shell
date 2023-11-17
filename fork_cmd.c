@@ -12,7 +12,7 @@ void fork_cmdk_m(info_tk_m *info)
 	child_pid = fork();
 	if (child_pid == -1)
 	{
-		/* TODO: PUT ERROR FUNCTION */
+
 		perror("Error:");
 		return;
 	}
@@ -25,7 +25,6 @@ void fork_cmdk_m(info_tk_m *info)
 				exit(126);
 			exit(1);
 		}
-		/* TODO: PUT ERROR FUNCTION */
 	}
 	else
 	{

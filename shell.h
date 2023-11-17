@@ -15,26 +15,26 @@
 #include <linux/stat.h>
 
 /* for read/write buffers */
-#define READ_BUF_SIZE 1024
-#define WRITE_BUF_SIZE 1024
-#define BUF_FLUSH -1
+#define READ_BUF_SIZEk_m 1024
+#define WRITE_BUF_SIZEk_m 1024
+#define BUF_FLUSHk_m -1
 
 /* for command chaining */
-#define CMD_NORM 0
-#define CMD_OR 1
-#define CMD_AND 2
-#define CMD_CHAIN 3
+#define CMD_NORMk_m 0
+#define CMD_ORk_m 1
+#define CMD_ANDk_m 2
+#define CMD_CHAINk_m 3
 
 /* for convert_number() */
-#define CONVERT_LOWERCASE 1
-#define CONVERT_UNSIGNED 2
+#define CONVERT_LOWERCASEk_m 1
+#define CONVERT_UNSIGNEDk_m 2
 
 /* 1 if using system getline() */
-#define USE_GETLINE 0
-#define USE_STRTOK 0
+#define USE_GETLINEk_m 0
+#define USE_STRTOKk_m 0
 
-#define HIST_FILE ".simple_shell_history"
-#define HIST_MAX 4096
+#define HIST_FILEk_m ".simple_shell_history"
+#define HIST_MAXk_m 4096
 
 extern char **environ;
 
@@ -240,4 +240,5 @@ ssize_t input_bufk_m(info_tk_m *info, char **buf, size_t *len);
 int unset_aliask_m(info_tk_m *info, char *str);
 int set_aliask_m(info_tk_m *info, char *str);
 int print_aliask_m(list_tk_m *node);
+
 #endif

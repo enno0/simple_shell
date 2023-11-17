@@ -2,8 +2,7 @@
 
 /**
  * _unsetenvk_m - Remove an environment variable
- * @info: Structure containing potential arguments. Used to maintain
- *        constant function prototype.
+ * @info: Structure containing potential arguments. Used to maintain constant function prototype.
  *  Return: 1 on delete, 0 otherwise
  * @var: the string env var property
  */

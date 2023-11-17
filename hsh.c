@@ -16,7 +16,7 @@ int hshk_m(info_tk_m *info, char **av)
 		clear_infok_m(info);
 		if (interactivek_m(info))
 			_putsk_m("$ ");
-		_eputchark_m(BUF_FLUSH);
+		_eputchark_m(BUF_FLUSHk_m);
 		r = get_inputk_m(info);
 		if (r != -1)
 		{

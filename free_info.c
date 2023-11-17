@@ -20,10 +20,10 @@ void free_infok_m(info_tk_m *info, int all)
 		if (info->alias)
 			free_listk_m(&(info->alias));
 		ffreek_m(info->environ);
-			info->environ = NULL;
+		info->environ = NULL;
 		bfreek_m((void **)info->cmd_buf);
 		if (info->readfd > 2)
 			close(info->readfd);
-		_putchark_m(BUF_FLUSH);
+		_putchark_m(BUF_FLUSHk_m);
 	}
 }
